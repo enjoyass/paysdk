@@ -6,17 +6,17 @@
 ```
 ### 业务参数
 ```
-    model :=NewModel()
-    model.Add("product_code","FAST_INSTANT_TRADE_PAY")
-    model.Add("total_amount","0.01")
-    model.Add("subject","1")
-    model.Add("body","我是测试数据")
-    model.Add("out_trade_no","IQJZSRC1YMQB5HU")
+    bodyParam :=BizContent()
+    bodyParam.Add("product_code","FAST_INSTANT_TRADE_PAY")
+    bodyParam.Add("total_amount","0.01")
+    bodyParam.Add("subject","1")
+    bodyParam.Add("body","我是测试数据")
+    bodyParam.Add("out_trade_no","IQJZSRC1YMQB5HU")
 ```
 
 ### 生成签名后的请求参数
 ```
-    urlvalue,_:=aliPayClient.ProcessUrlValue(model)
+    urlvalue,_:=aliPayClient.ProcessUrlValue(bodyParam)
 ```
 
 ### 请求下单

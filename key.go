@@ -15,10 +15,10 @@ func parse(keyStr, prefix, suffix string)[]byte{
 	if keyStr == "" {
 		return nil
 	}
-	newRaw :=replace(keyStr)
+	newKeyStr :=replace(keyStr)
 
 	constLen := 64
-	keyLen:=len(newRaw)
+	keyLen:=len(newKeyStr)
 	var count = keyLen / constLen 
 	if  keyLen % constLen  > 0 {
 		count = count + 1
@@ -29,9 +29,9 @@ func parse(keyStr, prefix, suffix string)[]byte{
 		var b = i * constLen
 		var e = b + constLen
 		if e > keyLen {
-			buf.WriteString(newRaw[b:])
+			buf.WriteString(newKeyStr[b:])
 		} else {
-			buf.WriteString(newRaw[b:e])
+			buf.WriteString(newKeyStr[b:e])
 		}
 		buf.WriteString("\n")
 	}
