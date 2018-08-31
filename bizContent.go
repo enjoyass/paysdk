@@ -3,9 +3,9 @@ import (
 	"encoding/json"
 )
 
-type Model map[string]string
+type BizContent map[string]string
 
-type Modeler interface {
+type BizContenter interface {
 	Get(key string)string
 	Add(key,value string)
 	Set(key,value string)
@@ -17,11 +17,11 @@ type Modeler interface {
 // If there are no values associated with the key, Get returns
 // the empty string. To access multiple values, use the map
 // directly.
-func (m Model) Get(key string)string{
-	if m == nil {
+func (bc BizContent) Get(key string)string{
+	if bc == nil {
 		return ""
 	}
-	value,ok :=m[key]
+	value,ok :=bc[key]
 	if !ok {
 		return ""
 	}
@@ -29,21 +29,21 @@ func (m Model) Get(key string)string{
 }
 // Add adds the value to key. It appends to any existing
 // values associated with key.
-func (m Model) Add(key,value string){
-	m[key]=value
+func (bc BizContent) Add(key,value string){
+	bc[key]=value
 }
 // Set sets the key to value. It replaces any existing
 // values.
-func (m Model)Set(key,value string){
-	m[key]=value
+func (bc BizContent)Set(key,value string){
+	bc[key]=value
 }
 // Del deletes the values associated with key
-func (m Model)Del(key string){
-	delete(m,key)
+func (bc BizContent)Del(key string){
+	delete(bc,key)
 }
 // stringify
-func (m Model)ToString()string{
-	mjson,_ :=json.Marshal(m)
+func (bc BizContent)ToString()string{
+	mjson,_ :=json.Marshal(bc)
 	mString :=string(mjson)
 	return mString
 }

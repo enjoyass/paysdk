@@ -20,7 +20,7 @@ func TestNewAliPayClient(t *testing.T){
 	aliPayClient:=NewAliPayClient(appID,method,SIGN_TYPE_RSA2,"http://www.aliptest.com/noti",privateKey,privateKey)
 	
 	//{\"product_code\":\"FAST_INSTANT_TRADE_PAY\",\"total_amount\":\"0.01\",\"subject\":\"1\",\"body\":\"我是测试数据\",\"out_trade_no\":\"IQJZSRC1YMQB5HU\"}
-	model :=NewModel()
+	model :=NewBizContent()
 	model.Add("product_code","FAST_INSTANT_TRADE_PAY")
 	model.Add("total_amount","0.01")
 	model.Add("subject","1")

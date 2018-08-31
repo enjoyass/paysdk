@@ -5,32 +5,32 @@ import (
 	"testing"
 )
 
-func TestModel(t *testing.T) {
-	var model= Model{}
+func TestBizContent(t *testing.T) {
+	var bizContent= BizContent{}
 
 	//method add
-	model.Add("index1","value1")
-	fmt.Printf("%#v",model)
+	bizContent.Add("index1","value1")
+	fmt.Printf("%#v",bizContent)
 
 	//method stringify
-	str := model.ToString()
+	str := bizContent.ToString()
 	if str !=`{"index1":"value1"}`{
 		t.Errorf(`expected value is {"index1":"value1"},real data is %s`,str)
 	}
 	//method get
-	data := model.Get("index1")
+	data := bizContent.Get("index1")
 	if data != "value1" {
 		t.Errorf(`expected value is "value1",real data is %s`,data)
 	}
 	//method delete
-	model.Del("index1")
-	if model.Get("index1") !="" {
+	bizContent.Del("index1")
+	if bizContent.Get("index1") !="" {
 		t.Errorf(`del func errror`)
 	}
 
-	var modeler Modeler= Model{}
-	modeler.Add("index2","value2")
-	data2 := modeler.Get("index2")
+	var bizContenter BizContenter= BizContent{}
+	bizContenter.Add("index2","value2")
+	data2 := bizContenter.Get("index2")
 	if data2 != "value2" {
 		t.Errorf(`expected value is "value1",real data is %s`,data2)
 	}
