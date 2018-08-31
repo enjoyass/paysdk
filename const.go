@@ -9,8 +9,8 @@ const (
 	ALI_PAY_TRADE_STATUS_TRADE_FINISHED = "TRADE_FINISHED"
 
 	ALI_PAY_SANDBOX_API_URL     = "https://openapi.alipaydev.com/gateway.do"
-	ALI_PAY_PRODUCTION_API_URL  = "https://openapi.alipay.com/gateway.do"
-	ALI_PAY_PRODUCTION_MAPI_URL = "https://mapi.alipay.com/gateway.do"
+	ALI_PAY_API_URL  = "https://openapi.alipay.com/gateway.do?charset=utf-8"
+	ALI_PAY_MAPI_URL = "https://mapi.alipay.com/gateway.do"
 
 	FORMAT  = "JSON"
 	CHARSET = "utf-8"
