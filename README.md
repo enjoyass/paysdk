@@ -14,7 +14,7 @@
     model.Add("out_trade_no","IQJZSRC1YMQB5HU")
 ```
 
-### 生成签名后的强求参数
+### 生成签名后的请求参数
 ```
     urlvalue,_:=aliPayClient.ProcessUrlValue(model)
 ```
